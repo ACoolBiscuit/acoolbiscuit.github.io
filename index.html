@@ -10,6 +10,7 @@
 <body>
     <header>
         <h1>Donald's Homepage</h1>
+        <p id="time"></p>
     </header>
     <section>
         <h2>I am Donald</h2>
@@ -31,6 +32,19 @@
             <li>Moana (2016)</li>
         </ul>
     </section>
+    <div id="welcome">
+        <script>
+            const hours = new Date().getHours() // get the current hour
+
+            const isMorning = hours >= 4 && hours < 12 // is it morning?
+            const isAfternoon = hours >= 12 && hours < 17 // is it afternoon?
+            const isEvening = hours >= 17 || hours < 4 // is it evening?
+            
+            if (isMorning == true) { document.querySelector("#time").innerHTML = "Good Morning! ^.^" }
+            else if (isAfternoon == true) { document.querySelector("#time").innerHTML = "Good Afternoon! :)" }
+            else if (isEvening == true) {document.querySelector("#time").innerHTML = "Good Evening! -.-" }
+        </script>
+    </div>
     <footer>
         <p>&copy; 2024 Donald's VERY COOL webpage. No rights reserved. </p>
     </footer>
